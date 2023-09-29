@@ -1,6 +1,11 @@
 #!/bin/bash
 set -euo pipefail
 
+DIR=/var/jenkins_home/workspace/BuildSampleApp/tempdir
+[ -d "$DIR" ] && rm -r tempdir
+
+docker rm samplerunning --force
+
 mkdir tempdir
 mkdir tempdir/templates
 mkdir tempdir/static
